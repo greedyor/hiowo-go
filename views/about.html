@@ -1,0 +1,63 @@
+{{template "head" .}}
+<style>
+    .content .detail{
+        width:100%; height: 650px;  padding-top: 15px;
+    }
+    .content .detail .head{
+        width:30%; max-width: 300px; height: 650px;float: left;margin-right:15px; border: 1px #e1e4e8 solid;
+    }
+    .content .detail .info_top{
+        width:66%; height: 233px;float: left;margin-bottom:15px; border: 1px #e1e4e8 solid;
+    }
+    .content .detail .info_bottom{
+        width:66%; height: 400px;float: left; border: 1px #e1e4e8 solid;
+    }
+    .content .detail .head .img{
+        margin: 0 auto;width: 100%;max-width: 230px;min-height: 233px;max-height: 249px;
+    }
+    .content .detail .head .img .avatar{
+        margin: 15% 10% 15% 10%;width: 80%; border-radius: 10px;
+    }
+    .content .detail .head .contact{
+        width: 100%; height:50%;border-top: 1px #e1e4e8 solid; padding: 20px 0 20px 0;
+    }
+    .content .detail .head ul{
+        width: 80%;  margin: 0 10% 0 10%;height:auto;
+    }
+    .content .detail .head ul li{
+        width: 100%;height: 30px;line-height: 30px; float: left; margin-bottom: 10px; font-size: 15px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+    }
+    .content .detail .head ul li label{
+        display:inline-block;width: 20px; text-align: right; margin-right: 8px;
+    }
+    .content .detail .head ul li label i{
+        font-size: 18px;
+    }
+    .content .detail .head ul li a{
+        display:inline-block; float: right; margin: 8px 5% 0 0; color: #4876FF;
+    }
+</style>
+<main>
+    <div class="content">
+        <div class="detail">
+            <div class="head">
+                <div class="img"><img alt="" class="avatar" src="https://avatars.githubusercontent.com/u/44224558?v=4" ></div>
+                <div class="contact">
+                    <ul>
+                        <li><label><i class="fa fa-user-circle"></i></label><span>赖杰丰</span></li>
+                        <li><label><i class="fa fa-github" style="font-size: 20px"></i></label><span>greedyor<a href="https://github.com/greedyor" target="_blank" title="到 greedyor 的 github 主页"><i class="fa fa-chain"></i></a></span></li>
+                        <li><label><i class="fa fa-qq"></i></label><span>1433675107</span></li>
+                        <li><label><i class="fa fa-envelope"></i></label><span>onegoodfool@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info_top">
+                <p style="line-height: 233px; text-align: center;">博主比较懒，什么都没写...</p>
+            </div>
+            <div class="info_bottom">
+                <p style="line-height: 400px; text-align: center;">同上...</p>
+            </div>
+        </div>
+    </div>
+</main>
+{{template "footer" .}}

@@ -1,0 +1,118 @@
+/**
+ *
+ ---- ** 这里为基础手机端样式合集 ** ----
+ *
+ **/
+
+/**
+ *  1.导航栏样式
+ *  <nav>
+ */
+@media all and (orientation : portrait) {
+    nav {
+        height: 8rem;
+    }
+    nav .menu {
+        height: 8rem;
+        line-height: 8rem;
+    }
+    nav .menu ul {
+        height: calc(8rem - 5px);
+    }
+    nav .menu li {
+        height: calc(8rem - 5px);
+        width: 20%;
+        padding: 0;
+        text-align: center;
+        font-size: 35px;
+    }
+    nav .logo {
+        display: none !important;
+    }
+    nav .menu {
+        width: 100%;
+    }
+    nav .menu .sel::before {
+        top: 32%;
+        left: 26%;
+        height: 34%;
+    }
+    nav .menu .sel::before{
+        border-width: 0 0 0 5px !important;
+    }
+    nav .menu li:active{border-radius: 50px;}
+    nav .menu li:hover::before {content: "";display: none;}
+    nav .menu li:hover::after {content: "";display: none;}
+}
+
+/**1 - end**/
+
+/**
+ *  2.主体样式
+ *  <main>
+ */
+@media all and (orientation : portrait) {
+    main{
+        margin: 7.9rem 0 5px 0;
+    }
+    main .content{
+        width: 100%;
+    }
+    main .content h3{
+        font-size: 40px;
+    }
+    .info-bar .subfield li{
+        width: 100% !important;
+        font-size: 35px!important;
+        line-height: 62px !important;
+    }
+    .info-bar .subfield li .info-bar-content .time{
+        font-size: 24px!important;
+    }
+}
+
+/**2 - end**/
+
+/**
+ *  3.脚部样式
+ *  <main>
+ */
+@media all and (orientation : portrait) {
+    footer {
+        height: 8rem;
+    }
+
+    footer .jump {
+        display: none;
+    }
+
+    footer .keep_on_record {
+        width: 100%;
+        height: 8rem;
+        line-height: 8rem;
+        font-size: 32px;
+    }
+}
+
+/**3 - end**/
+
+/**
+ *  4.markdown 样式
+ *  <main>
+ */
+@media all and (orientation : portrait) {
+    .editormd-preview-container, .editormd-html-preview{
+        font-size: 40px !important;
+        width:calc(100% - 40px) !important;
+    }
+    .markdown-body img{
+        width: 100%;
+    }
+    .editormd-preview-container code, .editormd-html-preview code{
+        font-size: 30px !important;
+    }
+    .editormd-preview-container blockquote, .editormd-html-preview blockquote{
+        font-size: 35px !important;
+    }
+}
+/**4 - end**/

@@ -1,0 +1,57 @@
+/**
+ *
+ ---- ** 这里为元素样式合集 ** ----
+ *
+ **/
+
+/**
+ *  标题美化样式
+ */
+/**
+ *  对角线 element-title-diagonal
+ */
+.element-title-diagonal{
+    min-width:50px; min-height: 10px;background: #666666; padding-left: 40px; position: relative;float: left;overflow: hidden;
+}
+.element-title-diagonal:after{
+    width: 10%; height: 101%;background: #f3f3f3; position: absolute;left: 45%; transform: skewX(-45deg);display: block;content: ' ';
+}
+.element-title-diagonal:before{
+    width: 10%; height: 101%;background: #f3f3f3; position: absolute;right: 8%; transform: skewX(-45deg);display: block;content: ' ';
+}
+
+/**
+ *  元素大小样式
+ */
+
+/* 一般的  */
+.etype-general{
+    width: 100px; height: 15px;
+}
+/* 粗的  */
+.etype-coarse{
+    width: 160px; height: 25px;
+}
+/* 细的  */
+.etype-thin{
+    width: 50px; height: 10px;
+}
+
+/* 竖屏手机端  */
+@media all and (orientation : portrait) {
+    .etype-general{
+        width: 170px; height: 15px;
+    }
+}
+
+/**
+ *  元素颜色样式
+ */
+/* 黑色  */
+.ecolor-black{
+    background: #454545;
+}
+/* 灰色  */
+.ecolor-ash{
+    background: #666666;
+}

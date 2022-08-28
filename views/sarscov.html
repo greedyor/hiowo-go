@@ -1,0 +1,84 @@
+{{template "head" .}}
+<style>
+    .internal .subfield li{
+        width: 25% !important;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .overseas .subfield li{
+        width: 20% !important;
+        text-align: center;
+        line-height: 35px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+</style>
+<main>
+    <div class="content">
+        <div style="width:100%;margin-top: 5px;padding-top: 5px;padding-bottom: 30px;float: left;position: relative; background: #f3f3f3">
+            <h3>国内概况</h3>
+            <div class="element-title-diagonal ecolor-ash etype-general"></div><br>
+            <div class="info-bar internal">
+                <ul class="subfield">
+                    <li class="added"><b>累计确诊</b></li>
+                    <li class="cumulative"><b>新增确诊</b></li>
+                    <li class="cure"><b>治愈</b></li>
+                    <li class="die"><b>死亡</b></li>
+                </ul>
+            </div>
+        </div>
+        <div style="width:100%;min-height: 200px; margin-top: 5px;padding-top: 5px; float: left;position: relative;background: #f3f3f3">
+            <h3>海外实时</h3>
+            <div class="element-title-diagonal ecolor-ash etype-general"></div><br>
+            <div class="info-bar overseas">
+                <ul class="subfield">
+                    <li class="area"><b>地区</b></li>
+                    <li class="cumulative"><b>累计确诊</b></li>
+                    <li class="added"><b>新增确诊</b></li>
+                    <li class="cure"><b>治愈</b></li>
+                    <li class="die"><b>死亡</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    $(function () {
+        var json = $.parseJSON(decodeURIComponent('{{ .json }}'));
+        var data = json.result.areaTree;
+        //国内
+        internal();
+        function internal(){
+            var china = data[0];
+            var html = '<ul class="subfield"><li class="added">'+china.total.confirm+'</li><li class="cumulative">'+china.today.confirm+'</li><li class="cure">'+china.total.heal+'</li><li class="die">'+china.total.dead+'</li></ul>';
+            $('.internal').append(html);
+        }
+        //海外
+        overseas();
+        function overseas() {
+            // data.splice(0,1);
+            // var html = '<ul class="subfield">';
+            // for(var i in data){
+            //     html +=  '<li class="area">'+data[i].name+'</li><li class="added">'+data[i].total.confirm+'</li><li class="cumulative">'+data[i].today.confirm+'</li><li class="cure">'+data[i].total.heal+'</li><li class="die">'+data[i].total.dead+'</li>';
+            // }
+            // html +=  '</ul>';
+            // $('.overseas').append(html);
+            $.ajax({
+                url:'https://api.inews.qq.com/newsqa/v1/automation/foreign/country/ranklist',
+                success:function (r) {
+                    var data = r.data;
+                    var html = '<ul class="subfield">';
+                    for(var i in data){
+                        html +=  '<li class="area">'+data[i].name+'</li><li class="added">'+data[i].confirm+'</li><li class="cumulative">'+data[i].confirmAdd+'</li><li class="cure">'+data[i].heal+'</li><li class="die">'+data[i].dead+'</li>';
+                    }
+                    html +=  '</ul>';
+                    $('.overseas').append(html);
+                }
+            })
+        }
+    });
+</script>
+{{template "footer" .}}

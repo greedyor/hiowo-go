@@ -1,0 +1,45 @@
+{{template "head" .}}
+<main>
+    <div class="content">
+        <div style="width:100%;min-height: 200px; margin-top: 5px;padding-top: 5px; float: left;position: relative; background: #f3f3f3">
+            <div class="element-title-diagonal ecolor-ash etype-general"></div><br>
+            <h2>{{ .title }}</h2>
+            <div id="test-editormd-view">
+                <textarea id="hide-textarea" hidden>{{ .detail }}</textarea>
+            </div>
+        </div>
+        <div style="width:100%;min-height: 200px; margin-top: 5px;padding-top: 5px; float: left;position: relative; background: #f3f3f3">
+            <h3> cd /note</h3>
+            <div class="element-title-diagonal ecolor-ash etype-general"></div><br>
+            <div class="info-bar">
+                <ul class="subfield">
+                    {{ range $i, $v := .articleList }}
+                    <a href="/note/detail?id={{ $v.ID }}">
+                        <li>
+                            <div class="info-bar-content">
+                                <div class="title">{{ $v.Title }}</div>
+                                <div class="time">{{ $v.CreateTime }}</div>
+                            </div>
+                        </li>
+                    </a>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/public/static/editor.md/editormd.js"></script>
+<script>
+    $(function() {
+        var testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+            markdown:$('#hide-textarea').text(),
+            htmlDecode: "style,script,iframe",  // you can filter tags decode
+            emoji: true,
+            taskList: true,
+            tex: true,  // 默认不解析
+            flowChart: true,  // 默认不解析
+            sequenceDiagram: true,  // 默认不解析,
+        });
+    });
+</script>
+{{template "footer" .}}

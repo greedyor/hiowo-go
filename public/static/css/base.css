@@ -1,0 +1,229 @@
+/**
+ *
+ ---- ** 这里为基础样式合集 ** ----
+ *
+ **/
+
+/**
+ *   1.基础标签样式
+ *<html>
+ */
+body{
+    color:#333;background:#fff;padding:0;margin:0;position:relative;height: 100%;min-width: 700px;
+}
+body,th,td,.p1,.p2{
+    font-family:arial;
+}
+p,form,ol,ul,li,dl,dt,dd,h3{
+    margin:0;padding:0;list-style:none;
+}
+input{
+    padding-top:0;padding-bottom:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;
+}
+table,img{
+    border:0;
+}
+td{
+    font-size:9pt;line-height:18px;
+}
+em{
+    font-style:normal;color:#c00;
+}
+a em{
+    text-decoration:underline;
+}
+cite{
+    font-style:normal;color:green;
+}
+.m,a.m{
+    color:#666;
+}
+a.m:visited{
+    color:#606;
+}
+.g,a.g{
+    color:green;
+}
+h1,h2,h3{
+        color: #172C3C; margin-left: 5px;
+}
+/** </html> **/
+
+
+/**
+ *  2.导航栏样式
+ *  <nav>
+ */
+nav{
+    width:100%;background: #172C3C;height: 35px;color: #fff;position: absolute;overflow: hidden;
+}
+nav .loadlink{
+    height: 5px;width:100%;position: relative;z-index: 1;background:#274862;
+    transition: width 2s;
+    -moz-transition: width 2s;	/* Firefox 4 */
+    -webkit-transition: width 2s;	/* Safari 和 Chrome */
+    -o-transition: width 2s;	/* Opera */
+}
+nav .logo{
+    width:10%;min-width:100px;float: left;height: 30px;line-height: 30px; text-align: center;position: relative;
+}
+nav .menu{
+    width:80%;max-width: 1200px;min-width:352px;height: 30px;line-height: 30px; position: relative;margin: 0 auto;
+}
+nav .menu ul{
+    height:30px;position: relative;
+}
+nav .menu li{
+    float: left;width:28px;padding: 0 30px 0 30px;cursor: pointer; font-size: 14px;position: relative;
+}
+nav .menu li:hover::before {content: "";display: block;position: absolute;top: 2%;left: 3%;width: 91%;height: 82%;border: solid 2px #DDD;-webkit-animation: onflink 1.5s infinite;}
+nav .menu li:hover::after {content: "";display: block;position: absolute;top: 2%;left: 8%;width: 80%;height: 82%;border: solid 2px #172C3C;}
+nav .menu .sel::before {content: "";display: block;position: absolute;top: 20%;left: 28%;width: 50%;height: 60%;border-style: solid;border-width:0 0 0 1px;border-color: #DDD;opacity:0;-webkit-animation: flink 1.7s infinite; }
+@-webkit-keyframes flink { 0% {opacity: 0.5;} 50% {opacity: 1;} 100% {opacity: 0;} }
+@-webkit-keyframes onflink { 0% {opacity: 1;}100% {opacity: 1;} }
+nav .menu a:-webkit-any-link {
+    color: #fff !important;
+}
+/** </nav> **/
+
+
+/**
+ *  3.主体内容样式
+ *  <main>
+ */
+main{
+    width: 100%;float:left;position: relative; margin: 35px 0 5px 0;
+}
+main .content{
+    width: 80%; max-width: 1200px; min-width: 700px; min-height: calc(100% - 85px); position: relative; margin: 0 auto 5px auto;
+}
+.info-bar{
+    width: 100%;position: relative;
+}
+.info-bar .subfield li{
+    width: 50%;float: left;overflow: hidden;cursor:pointer;
+}
+.info-bar li .info-bar-content{
+    width: 98%;height: 70px;padding: 3px 1% 3px 1%;
+}
+.info-bar li .info-bar-content .title{
+    width: 98%;min-height:calc(30px - 6px);max-height:calc(50px - 6px); padding: 3px 1% 3px 1%;float: left;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;line-clamp: 2;-webkit-box-orient: vertical;
+}
+.info-bar li .info-bar-content .time{
+    width: 100%;color: #333333;font-size: 14px; text-align: right;float: left;
+}
+.info-bar a:-webkit-any-link {
+    color: #333333 !important;
+}
+/** </main> **/
+
+
+/**
+ *  4.页面脚部样式
+ *  <footer>
+ */
+footer{
+    background: #172C3C;height: 40px;width:100%;float:left;position: relative;
+}
+footer .subject{
+    margin: 0 auto; max-width: 1200px;min-width: 700px;
+}
+footer .jump{
+    width: 50%;text-align: center;height: 40px;color: white;font-size: 12px; float: left;
+}
+footer .jump .github{
+    display:inline-block;width: 40px;height: 40px;font-size: 30px;color: white;line-height: 40px;
+}
+footer .keep_on_record{
+    width: 50%;margin: 0 auto;text-align: center;height: 40px; line-height:40px;color: white;font-size: 12px;float: left;
+}
+/** </footer> **/
+
+/**
+   5.弹出层样式
+ */
+
+
+/**5 - end**/
+
+/**
+   6.标签自适应
+ */
+/* （1）屏幕在大于1200px时 */
+@media screen and (min-width: 1200px) {
+    /* 基础标签样式 */
+
+
+    /* 导航栏样式 */
+
+
+    /* 主体内容样式 */
+    main{
+        width:100%;
+    }
+    main .content{
+        width:80%;
+    }
+
+    /* 页面脚部样式 */
+    footer{
+        width:100%;
+    }
+    footer .subject{
+        width:80%;
+    }
+}
+/* （2）屏幕在大于700px时 */
+@media screen and (max-width: 1200px) and (min-width: 700px) {
+    /* 基础标签样式 */
+
+
+    /* 导航栏样式 */
+
+
+    /* 主体内容样式 */
+    main{
+        width:100%;
+    }
+    main .content{
+        width:82%;
+    }
+
+    /* 页面脚部样式 */
+    footer{
+        width:100%;
+    }
+    footer .subject{
+        width:82%;
+    }
+}
+/* （3）屏幕在小于700px时 */
+@media screen and (max-width: 700px) {
+    /* 基础标签样式 */
+
+
+    /* 导航栏样式 */
+
+
+    /* 主体内容样式 */
+    main{
+        width:700px;
+    }
+    main .content{
+        width:100%;
+    }
+
+    /* 页面脚部样式 */
+    footer{
+        width:700px;
+    }
+    footer .subject{
+        width:100%;
+    }
+
+    nav .logo{
+        display: none;
+    }
+}
+
+/**6 - end**/
