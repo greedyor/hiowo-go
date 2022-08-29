@@ -10,5 +10,5 @@ type ArticleDetail struct {
 
 // 自定义表名称
 func (ArticleDetail) TableName() string {
-	return "t_article_detail"
+	return "ob_article_detail"
 }

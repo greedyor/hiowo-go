@@ -3,9 +3,9 @@ mysql:
   port: 3306
   username: "root"
   password: "hiowo"
-  database: "test"
+  database: "blog"
   charset: "utf8mb4"
-  prefix: "t_"
+  prefix: "ob_"
 
 redis:
   host: "127.0.0.1"
