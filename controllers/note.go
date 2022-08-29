@@ -17,7 +17,7 @@ func Note(c *gin.Context) {
 
 	// 查询
 	var article []models.Article
-	models.DB().Where("type = 1").Offset(offset).Limit(pageSize).Find(&article)
+	models.DB.Where("type = 1").Offset(offset).Limit(pageSize).Find(&article)
 
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"articleList": article,
@@ -42,7 +42,7 @@ func NoteDetail(c *gin.Context) {
 
 	// 查询文章信息
 	var article models.Article
-	result := models.DB().Select("title").Where("type = 1 and id=?", id).First(&article)
+	result := models.DB.Select("title").Where("type = 1 and id=?", id).First(&article)
 
 	if result.Error != nil {
 		Error(c)
@@ -51,11 +51,11 @@ func NoteDetail(c *gin.Context) {
 
 	// 查询详情
 	var articleDetail models.ArticleDetail
-	models.DB().Select("content").Where("article_id=?", id).First(&articleDetail)
+	models.DB.Select("content").Where("article_id=?", id).First(&articleDetail)
 
 	// 查询列表
 	var articleList []models.Article
-	models.DB().Where("type = 1").Offset(0).Limit(10).Find(&articleList)
+	models.DB.Where("type = 1").Offset(0).Limit(10).Find(&articleList)
 
 	c.HTML(http.StatusOK, "detail.html", gin.H{
 		"title":       article.Title,
