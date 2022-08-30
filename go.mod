@@ -1,4 +1,4 @@
-module webkodes.com/admin
+module hiowo.com
 
 go 1.13
 

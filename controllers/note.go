@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"webkodes.com/admin/models"
+	"hiowo.com/models"
 )
 
 // Note
@@ -57,10 +57,11 @@ func NoteDetail(c *gin.Context) {
 	var articleList []models.Article
 	models.DB.Where("type = 1").Offset(0).Limit(10).Find(&articleList)
 
-	c.HTML(http.StatusOK, "detail.html", gin.H{
+	c.HTML(http.StatusOK, "detail.html", RenderData(H{
+		"head_title":  article.Title,
 		"title":       article.Title,
 		"detail":      articleDetail.Content,
 		"articleList": articleList,
-	})
+	}))
 
 }

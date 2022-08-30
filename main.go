@@ -6,9 +6,9 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"webkodes.com/admin/config"
-	"webkodes.com/admin/models"
-	"webkodes.com/admin/routes"
+	"hiowo.com/config"
+	"hiowo.com/models"
+	"hiowo.com/routes"
 )
 
 func main() {

@@ -24,7 +24,7 @@ func Sarscov(c *gin.Context) {
 
 	json := url.QueryEscape(string(bytes))
 
-	c.HTML(http.StatusOK, "sarscov.html", gin.H{
+	c.HTML(http.StatusOK, "sarscov.html", RenderData(H{
 		"json": json,
-	})
+	}))
 }

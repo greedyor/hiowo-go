@@ -2,10 +2,10 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"webkodes.com/admin/controllers"
+	"hiowo.com/controllers"
 )
 
-// IndexRouter created auth router
+// SarscovRouter created auth router
 func SarscovRouter(r *gin.Engine) *gin.Engine {
 
 	r.GET("/sarscov", controllers.Sarscov)

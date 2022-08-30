@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"webkodes.com/admin/controllers"
+	"hiowo.com/controllers"
 )
 
 // IndexRouter created auth router

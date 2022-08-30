@@ -8,5 +8,5 @@ import (
 
 // About
 func About(c *gin.Context) {
-	c.HTML(http.StatusOK, "about.html", gin.H{})
+	c.HTML(http.StatusOK, "about.html", H{})
 }

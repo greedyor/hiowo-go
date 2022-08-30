@@ -8,5 +8,5 @@ import (
 
 // Error
 func Error(c *gin.Context) {
-	c.HTML(http.StatusOK, "error.html", gin.H{})
+	c.HTML(http.StatusOK, "error.html", H{})
 }
