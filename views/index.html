@@ -6,12 +6,12 @@
             <div class="element-title-diagonal ecolor-ash etype-general"></div><br>
             <div class="info-bar">
                 <ul class="subfield">
-                    {{ range $i, $v := .articleList }}
-                    <a href="/note/detail?id={{ $v.ID }}">
+                    {{ range .articleList }}
+                    <a href="/note/detail?id={{ .ID }}">
                         <li>
                             <div class="info-bar-content">
-                                <div class="title">{{ $v.Title }}</div>
-                                <div class="time">{{ $v.CreateTime }}</div>
+                                <div class="title">{{ .Title }}</div>
+                                <div class="time">{{ .CreateTime }}</div>
                             </div>
                         </li>
                     </a>

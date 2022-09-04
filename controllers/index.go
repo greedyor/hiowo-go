@@ -19,7 +19,7 @@ func Index(c *gin.Context) {
 
 	var article []models.Article
 
-	models.DB.Where("type = 1").Offset(offset).Limit(pageSize).Find(&article)
+	models.DB.Where("type = 1").Offset(offset).Limit(pageSize).Order("id desc").Find(&article)
 
 	c.HTML(http.StatusOK, "index.html", RenderData(H{
 		"articleList": article,

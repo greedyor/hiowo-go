@@ -11,17 +11,8 @@ import (
 // Note
 func Note(c *gin.Context) {
 
-	page := 1
-	pageSize := 10
-	offset := (page - 1) * pageSize
+	Index(c)
 
-	// 查询
-	var article []models.Article
-	models.DB.Where("type = 1").Offset(offset).Limit(pageSize).Find(&article)
-
-	c.HTML(http.StatusOK, "index.html", gin.H{
-		"articleList": article,
-	})
 }
 
 // NoteDetail

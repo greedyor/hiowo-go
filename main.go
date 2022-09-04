@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"strconv"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"hiowo.com/config"
@@ -14,7 +16,7 @@ import (
 func main() {
 
 	// 日志记录
-	logfile, err := os.Create("./log/gin_http.log")
+	logfile, err := os.Create("./log/gin_http_" + strconv.FormatInt(time.Now().Unix(), 10) + ".log")
 	if err != nil {
 		fmt.Println("Could not create log file")
 	}
@@ -39,5 +41,6 @@ func main() {
 	r = routes.IndexRouter(r)
 	r = routes.NoteRouter(r)
 	r = routes.SarscovRouter(r)
-	r.Run()
+	r.Run(":8080")
+
 }
